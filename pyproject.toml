@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surveillance-app-local"
+version = "1.0.0"
+description = "Application locale de surveillance intelligente avec reconnaissance faciale, détection de mouvement et dashboard web."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "face-recognition",
+  "Pillow",
+  "Flask",
+  "customtkinter",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+surveillance-app = "surveillance_app.gui:main"
+surveillance-dashboard = "surveillance_app.dashboard_web:main"
+
+[tool.setuptools]
+packages = ["surveillance_app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

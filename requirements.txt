@@ -1,0 +1,6 @@
+numpy
+opencv-python
+face-recognition
+Pillow
+Flask
+customtkinter
